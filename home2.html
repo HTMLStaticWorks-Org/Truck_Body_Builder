@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TitanRig - Commercial Fleet Upfitting &amp; OEM Truck Body Solutions</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+  
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              light: '#f8fafc',
+              dark: '#0b0f17',
+              primary: '#ea580c',
+              primaryHover: '#c2410c',
+              secondary: '#f59e0b',
+              secondaryHover: '#d97706',
+              accent: '#fb923c',
+              navy: '#1e293b',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-[#0b0f17] dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-accent flex items-center justify-center text-white shadow-md shadow-orange-700/20">
+            <i data-lucide="truck" class="w-6 h-6"></i>
+          </div>
+          <span class="font-outfit text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            Titan<span class="text-brand-primary">Rig</span>
+          </span>
+        </a>
+
+        <!-- Desktop Menu (Single word items) -->
+        <div class="hidden lg:flex items-center space-x-2 rtl:space-x-reverse">
+          <a href="index.html" class="px-3.5 py-2 rounded-lg text-[15px] font-medium text-slate-700 hover:text-brand-primary dark:text-slate-300 dark:hover:text-orange-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">Home</a>
+          <a href="home2.html" class="px-3.5 py-2 rounded-lg text-[15px] font-semibold transition-colors text-brand-primary dark:text-orange-400 bg-orange-50 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-800/50">Home2</a>
+          <a href="workshop.html" class="px-3.5 py-2 rounded-lg text-[15px] font-medium text-slate-700 hover:text-brand-primary dark:text-slate-300 dark:hover:text-orange-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">Workshop</a>
+          <a href="fabrication.html" class="px-3.5 py-2 rounded-lg text-[15px] font-medium text-slate-700 hover:text-brand-primary dark:text-slate-300 dark:hover:text-orange-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">Fabrication</a>
+          <a href="showcase.html" class="px-3.5 py-2 rounded-lg text-[15px] font-medium text-slate-700 hover:text-brand-primary dark:text-slate-300 dark:hover:text-orange-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">Showcase</a>
+          <a href="insights.html" class="px-3.5 py-2 rounded-lg text-[15px] font-medium text-slate-700 hover:text-brand-primary dark:text-slate-300 dark:hover:text-orange-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">Insights</a>
+          <a href="contact.html" class="px-3.5 py-2 rounded-lg text-[15px] font-medium text-slate-700 hover:text-brand-primary dark:text-slate-300 dark:hover:text-orange-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">Contact</a>
+        </div>
+
+        <!-- Desktop Utility Buttons -->
+        <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+          
+          <!-- RTL Toggle -->
+          <button class="rtl-toggle w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center" aria-label="Toggle Direction">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button class="theme-toggle w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="sun-icon w-5 h-5 hidden"></i>
+            <i data-lucide="moon" class="moon-icon w-5 h-5"></i>
+          </button>
+
+          <!-- Estimate CTA Button -->
+          <a href="estimate.html" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-primary to-brand-accent text-white text-sm font-semibold hover:shadow-lg hover:shadow-orange-600/25 transition-all transform hover:-translate-y-0.5">Estimate</a>
+        </div>
+
+        <!-- Mobile Navigation Menu Toggle Button -->
+        <div class="flex items-center space-x-3 lg:hidden rtl:space-x-reverse">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Open Menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Slide Down Menu -->
+    <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 glass-nav shadow-lg flex-col px-4 pt-4 pb-6 space-y-3 transition-all duration-300 transform opacity-0 -translate-y-4">
+      <a href="index.html" class="px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Home</a>
+      <a href="home2.html" class="px-3 py-2 rounded-lg text-base font-semibold text-brand-primary bg-orange-50 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-800/50">Home2</a>
+      <a href="workshop.html" class="px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Workshop</a>
+      <a href="fabrication.html" class="px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Fabrication</a>
+      <a href="showcase.html" class="px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Showcase</a>
+      <a href="insights.html" class="px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Insights</a>
+      <a href="contact.html" class="px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Contact</a>
+      <div class="h-[1px] bg-slate-200 dark:bg-slate-800 my-2"></div>
+      <div class="mobile-toggles-row flex items-center justify-between gap-3.5 pt-1 pb-2">
+        <!-- Mobile RTL Toggle -->
+        <button class="rtl-toggle flex-1 h-10 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-650 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center bg-white dark:bg-slate-900" aria-label="Toggle Direction">
+          <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+        </button>
+        <!-- Mobile Theme Toggle -->
+        <button class="theme-toggle flex-1 h-10 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-655 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center space-x-2 bg-white dark:bg-slate-900" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="sun-icon w-4 h-4 hidden"></i>
+          <i data-lucide="moon" class="moon-icon w-4 h-4"></i>
+          <span class="text-xs font-bold tracking-wider dark:hidden">Dark Mode</span>
+          <span class="text-xs font-bold tracking-wider hidden dark:inline">Light Mode</span>
+        </button>
+      </div>
+      <!-- Estimate Button -->
+      <a href="estimate.html" class="w-full text-center py-3 rounded-xl bg-gradient-to-r from-brand-primary to-brand-accent text-white text-sm font-semibold shadow-md shadow-orange-600/20 hover:shadow-orange-600/35 transition-all">Estimate Now</a>
+      <button id="mobile-menu-close" class="absolute top-2 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-grow pt-20">
+    <!-- 1. Hero Section -->
+    <section class="hero-section relative flex flex-col sm:flex-row min-h-screen sm:items-center sm:justify-center py-24 md:py-32 sm:overflow-hidden text-white bg-slate-950">
+      <!-- Full Cover Background Image -->
+      <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80" 
+           alt="TitanRig Commercial Fleet Upfitting & OEM Body Manufacturing" 
+           class="hidden sm:block absolute inset-0 w-full h-full object-cover opacity-65">
+      <!-- Overlay -->
+      <div class="hidden sm:block absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-900/30 z-0"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8 animate-fade-in-up">
+        <div class="max-w-4xl mx-auto space-y-6">
+          <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full bg-white/10 text-orange-300 font-semibold text-xs tracking-wider uppercase backdrop-blur-md">
+            <i data-lucide="cog" class="w-4 h-4 text-amber-300"></i>
+            <span>Commercial Fleet Upfitting &amp; OEM Body Manufacturing</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-outfit leading-tight text-white">
+            Enterprise Fleet Bodies &amp;<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">High-Volume Commercial Upfitting</span>
+          </h1>
+          
+          <p class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed">
+            Scalable, precision-engineered truck body production for national logistics fleets, municipal departments, and commercial dealerships. Maximize payload ROI and minimize chassis turnaround times.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto relative z-10 w-full">
+          <a href="contact.html" class="w-full sm:w-72 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-primary to-brand-accent text-white font-semibold text-center hover:shadow-lg hover:shadow-orange-600/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center">
+            Schedule Fleet Consultation
+          </a>
+          <a href="fabrication.html" class="w-full sm:w-72 px-8 py-4 rounded-xl bg-slate-800/80 border border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-white font-semibold text-center backdrop-blur-sm transition-all flex items-center justify-center">
+            Browse Upfit Programs
+          </a>
+        </div>
+
+        <!-- Metric summaries -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto pt-10 border-t border-white/10">
+          <div class="space-y-1">
+            <p class="text-3xl font-bold font-outfit text-orange-400">100%</p>
+            <p class="text-xs text-slate-300 font-medium">NTEA &amp; FMVSS Compliant</p>
+          </div>
+          <div class="space-y-1">
+            <p class="text-3xl font-bold font-outfit text-orange-400">4.9/5</p>
+            <p class="text-xs text-slate-300 font-medium">Fleet Manager Rating</p>
+          </div>
+          <div class="space-y-1">
+            <p class="text-3xl font-bold font-outfit text-orange-400"><span class="stat-counter" data-target="8500">0</span>+</p>
+            <p class="text-xs text-slate-300 font-medium">Bodies in Active Service</p>
+          </div>
+          <div class="space-y-1">
+            <p class="text-3xl font-bold font-outfit text-orange-400">22%+</p>
+            <p class="text-xs text-slate-300 font-medium">Payload Weight Optimization</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile-only image -->
+      <img 
+        src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1000&q=80" 
+        alt="TitanRig Commercial Fleet Upfitting" 
+        class="block sm:hidden w-full flex-shrink-0 mt-6" 
+        style="height: 260px; object-fit: cover;">
+    </section>
+
+    <!-- 2. Common Fleet Vulnerabilities Section -->
+    <section class="py-20 bg-white dark:bg-[#111827]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="text-brand-primary font-semibold uppercase tracking-wider text-sm">Fleet Operational Risks</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-outfit text-slate-900 dark:text-white">
+            Common Threats to Commercial Truck Uptime &amp; Payload
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 font-normal">
+            Off-the-shelf mass-produced truck bodies suffer from weak welds and poor corrosion protection, exposing fleet operators to costly repairs and downtime.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Problem 1 -->
+          <div class="glass-card rounded-2xl border border-slate-100 dark:border-orange-900/40 shadow-md overflow-hidden hover:-translate-y-1 transition-all duration-300">
+            <div class="w-full h-52 overflow-hidden shadow-sm">
+              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=700&q=80" alt="Subframe Cracking & Fatigue" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Subframe Cracking &amp; Fatigue</h3>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal leading-relaxed">
+                Inferior stitch welds and undersized crossmembers fracture under heavy torsion and rough jobsite terrain.
+              </p>
+            </div>
+          </div>
+
+          <!-- Problem 2 -->
+          <div class="glass-card rounded-2xl border border-slate-100 dark:border-orange-900/40 shadow-md overflow-hidden hover:-translate-y-1 transition-all duration-300">
+            <div class="w-full h-52 overflow-hidden shadow-sm">
+              <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=700&q=80" alt="Corrosion & Salt Rust-Out" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Corrosion &amp; Salt Rust-Out</h3>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal leading-relaxed">
+                Untreated mild-steel underbodies corrode rapidly from winter road de-icers, shortening vehicle service life.
+              </p>
+            </div>
+          </div>
+
+          <!-- Problem 3 -->
+          <div class="glass-card rounded-2xl border border-slate-100 dark:border-orange-900/40 shadow-md overflow-hidden hover:-translate-y-1 transition-all duration-300">
+            <div class="w-full h-52 overflow-hidden shadow-sm">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Excess Body Deadweight" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Excess Body Deadweight</h3>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal leading-relaxed">
+                Over-heavy legacy steel bodies eat into legal GVWR limits, reducing revenue-generating cargo capacity.
+              </p>
+            </div>
+          </div>
+
+          <!-- Problem 4 -->
+          <div class="glass-card rounded-2xl border border-slate-100 dark:border-orange-900/40 shadow-md overflow-hidden hover:-translate-y-1 transition-all duration-300">
+            <div class="w-full h-52 overflow-hidden shadow-sm">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="Hydraulic & Electrical Failures" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Hydraulic &amp; PTO Failures</h3>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal leading-relaxed">
+                Exposed wiring harnesses and uncalibrated PTO hydraulic pumps cause costly roadside breakdowns every season.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. Methodology & Engineering Section -->
+    <section class="py-20 bg-slate-50 dark:bg-[#0b0f17] relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left side: image showcase -->
+          <div class="lg:col-span-5 relative">
+            <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-brand-secondary to-brand-primary opacity-10 blur-xl dark:opacity-20"></div>
+            <div class="relative glass-card p-3 rounded-3xl shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80" 
+                   alt="Modern CAD and robotic truck body manufacturing plant" 
+                   class="rounded-2xl w-full h-[320px] md:h-[400px] object-cover">
+            </div>
+          </div>
+
+          <!-- Right side: technology descriptions -->
+          <div class="lg:col-span-7 space-y-6 text-left rtl:text-right">
+            <span class="text-brand-secondary font-semibold uppercase tracking-wider text-sm">Industrial Engineering</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-outfit text-slate-900 dark:text-white">
+              Advanced Fabrication Technology We Deploy
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 font-normal">
+              We leverage 3D finite element stress modeling, CNC fiber laser cutting, and automated robotic welding cells to build repeatable, heavy-duty truck bodies.
+            </p>
+ 
+            <div class="space-y-4 pt-2">
+              <!-- Item 1 -->
+              <div class="flex items-start space-x-3.5 rtl:space-x-reverse">
+                <div class="mt-1 p-2 rounded-lg bg-white dark:bg-[#151e2e] text-brand-primary shadow-sm flex-shrink-0">
+                  <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base">3D Finite Element Analysis (FEA)</h4>
+                  <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal mt-0.5">
+                    Simulating dynamic torsional stress and payload distribution across every chassis frame rail before cutting steel.
+                  </p>
+                </div>
+              </div>
+ 
+              <!-- Item 2 -->
+              <div class="flex items-start space-x-3.5 rtl:space-x-reverse">
+                <div class="mt-1 p-2 rounded-lg bg-white dark:bg-[#151e2e] text-brand-secondary shadow-sm flex-shrink-0">
+                  <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base">Robotic MIG Welding &amp; CNC Fiber Lasers</h4>
+                  <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal mt-0.5">
+                    Automated seam welding and sub-millimeter laser cutting ensure repeatable structural integrity across fleet orders.
+                  </p>
+                </div>
+              </div>
+ 
+              <!-- Item 3 -->
+              <div class="flex items-start space-x-3.5 rtl:space-x-reverse">
+                <div class="mt-1 p-2 rounded-lg bg-white dark:bg-[#151e2e] text-amber-400 shadow-sm flex-shrink-0">
+                  <i data-lucide="award" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base">NTEA MVP &amp; FMVSS 223/224 Certification</h4>
+                  <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal mt-0.5">
+                    Certified rear impact guards, center-of-gravity calculations, and federal weight sticker certification on every build.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+        </div>
+ 
+      </div>
+    </section>
+ 
+    <!-- 4. Fleet Industry Profiles Section -->
+    <section class="py-20 bg-white dark:bg-[#111827]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="text-brand-primary font-semibold uppercase tracking-wider text-sm">Fleet Sectors</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-outfit text-slate-900 dark:text-white">
+            Bodies Tailored for Commercial Fleet Operators
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 font-normal">
+            Whether operating regional freight liners, municipal utility rigs, or heavy construction tippers, our engineers custom-spec bodies for your duty cycle.
+          </p>
+        </div>
+ 
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="rounded-3xl bg-slate-50 dark:bg-[#151e2e] border border-slate-100 dark:border-orange-900/40 text-center overflow-hidden hover:shadow-md transition-shadow">
+            <div class="w-full h-40 overflow-hidden shadow-sm">
+              <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=700&q=80" alt="Freight & Logistics Fleets" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Freight &amp; Logistics</h3>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal">
+                Dry freight vans, curtain-siders, and logistics box bodies built for high-cube regional and last-mile delivery.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- Card 2 -->
+          <div class="rounded-3xl bg-slate-50 dark:bg-[#151e2e] border border-slate-100 dark:border-orange-900/40 text-center overflow-hidden hover:shadow-md transition-shadow">
+            <div class="w-full h-40 overflow-hidden shadow-sm">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Construction & Mining Hauling" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Construction &amp; Mining</h3>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal">
+                Hardox steel dump bodies, contractor flatbeds, and roll-off hoists engineered for extreme aggregate hauling.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- Card 3 -->
+          <div class="rounded-3xl bg-slate-50 dark:bg-[#151e2e] border border-slate-100 dark:border-orange-900/40 text-center overflow-hidden hover:shadow-md transition-shadow">
+            <div class="w-full h-40 overflow-hidden shadow-sm">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=700&q=80" alt="Municipal & Utility Fleets" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Municipal &amp; Utilities</h3>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal">
+                Service crane bodies, aerial bucket upfits, and snow/ice control spreaders for public works departments.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- Card 4 -->
+          <div class="rounded-3xl bg-slate-50 dark:bg-[#151e2e] border border-slate-100 dark:border-orange-900/40 text-center overflow-hidden hover:shadow-md transition-shadow">
+            <div class="w-full h-40 overflow-hidden shadow-sm">
+              <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?auto=format&fit=crop&w=700&q=80" alt="Cold Chain & Food Distribution" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="font-bold text-slate-900 dark:text-white text-lg">Cold Chain &amp; Food</h3>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal">
+                Multi-temp insulated reefer bodies with antimicrobial liners and standby shore-power refrigeration units.
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </section>
+
+    <!-- 5. Core Commercial Truck Body Systems Section -->
+    <section class="py-20 bg-orange-50/60 dark:bg-[#151e2e] border-y border-orange-100 dark:border-orange-900/40 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="text-brand-primary dark:text-orange-400 font-semibold uppercase tracking-wider text-sm">Comprehensive Body Systems</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-outfit text-slate-900 dark:text-white">
+            Core Commercial Truck Body Configurations
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 font-normal">
+            Proven structural architectures that maximize legal payload, streamline cargo loading, and withstand decades of heavy commercial operation.
+          </p>
+        </div>
+
+        <!-- 4-Card Practice Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- System 1: Heavy-Duty Flatbeds -->
+          <div class="glass-card rounded-3xl border border-slate-100 dark:border-orange-900/40 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <div class="w-full h-52 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=800&q=80" 
+                   alt="Heavy-Duty Flatbed Truck Body" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 rtl:left-auto rtl:right-3 bg-brand-primary/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                Payload Series
+              </span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow text-left rtl:text-right">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Heavy-Duty Flatbeds</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-normal leading-relaxed mb-4 flex-grow">
+                Laser-cut structural C-channel subframes paired with diamond-plate steel or extruded aluminum decks, recessed D-rings, and bulkhead headache racks.
+              </p>
+              <ul class="space-y-2 mb-6 text-xs text-slate-600 dark:text-slate-300 font-medium border-t border-slate-100 dark:border-orange-900/40 pt-4">
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-orange-500 flex-shrink-0"></i>
+                  <span>Sliding winch track &amp; stake pockets</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-orange-500 flex-shrink-0"></i>
+                  <span>Forklift-rated reinforced side rails</span>
+                </li>
+              </ul>
+              <a href="estimate.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-brand-primary hover:text-white dark:hover:bg-brand-primary text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all">
+                <span>Spec a Flatbed Body</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- System 2: Refrigerated Reefers -->
+          <div class="glass-card rounded-3xl border border-slate-100 dark:border-orange-900/40 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <div class="w-full h-52 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?auto=format&fit=crop&w=800&q=80" 
+                   alt="Refrigerated Reefer Truck Body" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 rtl:left-auto rtl:right-3 bg-brand-secondary/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                Cold Chain
+              </span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow text-left rtl:text-right">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Refrigerated Reefers</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-normal leading-relaxed mb-4 flex-grow">
+                Vacuum-bonded composite walls with 4-inch high-density polyurethane insulation, extruded aluminum duct floors, and multi-temp movable bulkheads.
+              </p>
+              <ul class="space-y-2 mb-6 text-xs text-slate-600 dark:text-slate-300 font-medium border-t border-slate-100 dark:border-orange-900/40 pt-4">
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-orange-500 flex-shrink-0"></i>
+                  <span>-20&deg;F deep-freeze thermal rating</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-orange-500 flex-shrink-0"></i>
+                  <span>Thermo King &amp; Carrier unit ready</span>
+                </li>
+              </ul>
+              <a href="estimate.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-brand-primary hover:text-white dark:hover:bg-brand-primary text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all">
+                <span>Spec a Reefer Body</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- System 3: Hydraulic Dump Bodies -->
+          <div class="glass-card rounded-3xl border border-slate-100 dark:border-orange-900/40 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <div class="w-full h-52 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" 
+                   alt="Hydraulic Dump Truck Body" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 rtl:left-auto rtl:right-3 bg-amber-700/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                Earthmoving
+              </span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow text-left rtl:text-right">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Hydraulic Dump Bodies</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-normal leading-relaxed mb-4 flex-grow">
+                Abrasion-resistant Hardox 450 tub and crossmemberless dump bodies with air-operated high-lift tailgates, cab shields, and electric tarp systems.
+              </p>
+              <ul class="space-y-2 mb-6 text-xs text-slate-600 dark:text-slate-300 font-medium border-t border-slate-100 dark:border-orange-900/40 pt-4">
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-orange-500 flex-shrink-0"></i>
+                  <span>50-ton telescopic front trunnion hoists</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-orange-500 flex-shrink-0"></i>
+                  <span>Pneumatic double-acting tailgate latches</span>
+                </li>
+              </ul>
+              <a href="estimate.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-brand-primary hover:text-white dark:hover:bg-brand-primary text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all">
+                <span>Spec a Dump Body</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- System 4: Service & Crane Bodies -->
+          <div class="glass-card rounded-3xl border border-slate-100 dark:border-orange-900/40 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <div class="w-full h-52 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" 
+                   alt="Service Mechanics and Crane Truck Body" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 rtl:left-auto rtl:right-3 bg-orange-800/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                Field Mechanics
+              </span>
+            </div>
+            <div class="p-6 flex flex-col flex-grow text-left rtl:text-right">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Service &amp; Crane Bodies</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-normal leading-relaxed mb-4 flex-grow">
+                Galvanneal steel utility bodies reinforced with torsion-box crane towers, hydraulic outriggers, rotary screw air compressors, and welder decks.
+              </p>
+              <ul class="space-y-2 mb-6 text-xs text-slate-600 dark:text-slate-300 font-medium border-t border-slate-100 dark:border-orange-900/40 pt-4">
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-orange-500 flex-shrink-0"></i>
+                  <span>Up to 14,000 lb hydraulic crane rating</span>
+                </li>
+                <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-orange-500 flex-shrink-0"></i>
+                  <span>Master-lock weatherproof tool cabinets</span>
+                </li>
+              </ul>
+              <a href="fabrication.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-brand-primary hover:text-white dark:hover:bg-brand-primary text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all">
+                <span>Explore All Body Types</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom CTA Row -->
+        <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0b0f17] border border-orange-100 dark:border-orange-900/40 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+          <div class="text-left rtl:text-right space-y-1">
+            <h4 class="text-lg font-bold text-slate-900 dark:text-white">Upfit These Body Configurations Across Your Fleet</h4>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Consult with TitanRig engineers to standardize body specs, PTO hydraulics, and livery across your commercial fleet.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+            <a href="estimate.html" class="flex-1 sm:flex-none px-6 py-3 rounded-xl bg-brand-primary hover:bg-brand-primaryHover text-white text-xs sm:text-sm font-semibold shadow-md transition-all text-center">
+              Request Fleet Estimate
+            </a>
+            <a href="showcase.html" class="flex-1 sm:flex-none px-6 py-3 rounded-xl border border-slate-200 dark:border-orange-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs sm:text-sm font-semibold transition-all text-center">
+              View Fleet Showcase
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Trust Indicators & Ratings Section -->
+    <section class="py-20 bg-slate-50 dark:bg-[#0b0f17] relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Stats section header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="text-brand-secondary font-semibold uppercase tracking-wider text-sm">Accredited Manufacturing</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-outfit text-slate-900 dark:text-white">
+            Trust Indicators &amp; Fleet Performance Metrics
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 font-normal">
+            NTEA MVP accredited truck body fabrication backed by AWS-certified welders and ISO 9001 quality control.
+          </p>
+        </div>
+
+        <!-- Metrics cards grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Rating Card -->
+          <div class="glass-card p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-orange-900/40 text-center space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/30 mx-auto flex items-center justify-center">
+              <i data-lucide="star" class="w-6 h-6 text-amber-400 fill-current"></i>
+            </div>
+            <p class="text-4xl font-extrabold text-slate-950 dark:text-white font-outfit">4.9 / 5.0</p>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Fleet Operator Rating</h3>
+            <p class="text-xs text-slate-400 font-normal">Based on 320+ commercial fleet &amp; dealer partnerships</p>
+          </div>
+
+          <!-- Projects Done -->
+          <div class="glass-card p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-orange-900/40 text-center space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/30 text-brand-primary mx-auto flex items-center justify-center">
+              <i data-lucide="check-circle" class="w-6 h-6"></i>
+            </div>
+            <p class="text-4xl font-extrabold text-slate-950 dark:text-white font-outfit"><span class="stat-counter" data-target="8500">0</span>+</p>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Custom Bodies Built</h3>
+            <p class="text-xs text-slate-400 font-normal">Operating across North American highways &amp; jobsites</p>
+          </div>
+
+          <!-- Payload Gain -->
+          <div class="glass-card p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-orange-900/40 text-center space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/30 text-brand-secondary mx-auto flex items-center justify-center">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <p class="text-4xl font-extrabold text-slate-950 dark:text-white font-outfit"><span class="stat-counter" data-target="35">0</span>%</p>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Longer Body Lifespan</h3>
+            <p class="text-xs text-slate-400 font-normal">Measured across 10-year commercial fleet duty cycles</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="glass-footer py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-1 lg:col-span-4 space-y-4 text-left rtl:text-right">
+          <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-accent flex items-center justify-center text-white shadow-md shadow-orange-700/20">
+              <i data-lucide="truck" class="w-5 h-5"></i>
+            </div>
+            <span class="font-outfit text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Titan<span class="text-brand-primary">Rig</span>
+            </span>
+          </a>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+            Heavy-duty commercial truck body manufacturer and fleet upfitter. Engineering custom flatbeds, dump bodies, dry freight vans, refrigerated reefers, and service crane rigs.
+          </p>
+          
+          <!-- Social Icons -->
+          <div class="flex items-center space-x-3 rtl:space-x-reverse pt-2">
+            <a href="#" class="w-9 h-9 flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-brand-primary hover:text-white transition-all duration-300" aria-label="Facebook">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-brand-primary hover:text-white transition-all duration-300" aria-label="X">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-brand-primary hover:text-white transition-all duration-300" aria-label="LinkedIn">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" class="w-9 h-9 flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-brand-primary hover:text-white transition-all duration-300" aria-label="Instagram">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Fabrication Links -->
+        <div class="md:col-span-1 lg:col-span-2 space-y-4 text-left rtl:text-right">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider">Body Types</h4>
+          <ul class="space-y-2.5 text-sm font-medium">
+            <li><a href="fabrication.html" class="hover:text-brand-primary transition-colors">Dry Freight Vans</a></li>
+            <li><a href="fabrication.html" class="hover:text-brand-primary transition-colors">Flatbed &amp; Stake</a></li>
+            <li><a href="fabrication.html" class="hover:text-brand-primary transition-colors">Hydraulic Dumps</a></li>
+            <li><a href="fabrication.html" class="hover:text-brand-primary transition-colors">Reefer Bodies</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Links -->
+        <div class="md:col-span-1 lg:col-span-2 space-y-4 text-left rtl:text-right">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider">Company</h4>
+          <ul class="space-y-2.5 text-sm font-medium">
+            <li><a href="workshop.html" class="hover:text-brand-primary transition-colors">Our Workshop</a></li>
+            <li><a href="showcase.html" class="hover:text-brand-primary transition-colors">Fleet Showcase</a></li>
+            <li><a href="insights.html" class="hover:text-brand-primary transition-colors">Builder Insights</a></li>
+            <li><a href="contact.html" class="hover:text-brand-primary transition-colors">Request Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacts and Hours -->
+        <div class="md:col-span-1 lg:col-span-4 space-y-4 text-left rtl:text-right">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider font-outfit">Plant &amp; Sales Hours</h4>
+          <ul class="space-y-2.5 text-sm font-medium">
+            <li class="flex items-center space-x-2.5 rtl:space-x-reverse">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-primary flex-shrink-0"></i>
+              <span>+1 (800) 555-RIGS</span>
+            </li>
+            <li class="flex items-center space-x-2.5 rtl:space-x-reverse">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-primary flex-shrink-0"></i>
+              <span class="break-all">quotes@titanrig-bodies.com</span>
+            </li>
+            <li class="flex items-center space-x-2.5 rtl:space-x-reverse">
+              <i data-lucide="clock" class="w-4 h-4 text-brand-secondary flex-shrink-0"></i>
+              <span>Mon - Sat: 6:30 AM - 6:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright row -->
+      <div class="footer-copyright pt-8 border-t flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm font-medium">
+        <p>&copy; 2026 TitanRig Truck Body Builders Inc. All rights reserved.</p>
+        <div class="flex items-center space-x-4 rtl:space-x-reverse mt-4 sm:mt-0">
+          <a href="#" class="hover:text-slate-900 dark:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="main.js"></script>
+</body>
+</html>
